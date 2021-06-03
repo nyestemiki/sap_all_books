@@ -7,4 +7,4 @@
     -   [x] update
     -   [x] delete
 
-[x] translatable notifications: completed successfully, or in case of an error
+-   [x] translatable notifications: completed successfully, or in case of an error

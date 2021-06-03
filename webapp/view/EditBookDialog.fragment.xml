@@ -1,0 +1,53 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Dialog
+        id="editBookDialog"
+        title="Edit a book">
+        <FlexBox
+            justifyContent="SpaceAround"
+            direction="Column"
+            alignItems="Center">
+            <Label
+                text="ISBN"
+                labelFor='isbnEdit' />
+            <Input id='isbnEdit' />
+            <Label
+                text="Title"
+                labelFor='titleEdit' />
+            <Input id='titleEdit' />
+            <Label
+                text="Author"
+                labelFor='authorEdit' />
+            <Input id='authorEdit' />
+            <Label
+                text="Published On"
+                labelFor='publishedOnEdit' />
+            <DateTimePicker
+                valueFormat="yyyy-MM-ddTHH:mm:ss"
+                id='publishedOnEdit' />
+            <Label
+                text="Language"
+                labelFor='languageEdit' />
+            <Input id='languageEdit' />
+            <Label
+                text="Number of Books"
+                labelFor='nrBooksEdit' />
+            <Input id='nrBooksEdit' />
+            <Label
+                text="Available Books"
+                labelFor='availableBooksEdit' />
+            <Input id='availableBooksEdit' />
+        </FlexBox>
+        <FlexBox
+            justifyContent="SpaceAround"
+            alignItems="Center">
+            <Button
+                text="Cancel"
+                press=".onCloseEditDialog" />
+            <Button
+                text="Save"
+                press=".onModifyBook" />
+        </FlexBox>
+    </Dialog>
+</core:FragmentDefinition>

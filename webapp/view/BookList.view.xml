@@ -1,0 +1,90 @@
+<mvc:View
+	controllerName="library.controller.BookList"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+	<FlexBox
+		justifyContent="SpaceAround"
+		alignItems="Center">
+		<Button
+			id="addBookButton"
+			text="{i18n>addBookDialogButtonText}"
+			icon="sap-icon://add"
+			press=".onAddBookDialog" />
+		<Button
+			icon="sap-icon://customize"
+			text="Update"
+			press=".onUpdateBook" />
+		<Button
+			icon="sap-icon://delete"
+			text="Delete"
+			press=".onDeleteBook" />
+	</FlexBox>
+	<Table
+		id="idBooksTable"
+		items="{/BooksSet}"
+		delete="onDeleteBook"
+		mode="SingleSelectLeft">
+		<columns>
+			<Column>
+				<Text text="ISBN" />
+			</Column>
+			<Column>
+				<Text text="Title" />
+			</Column>
+			<Column>
+				<Text text="Author" />
+			</Column>
+			<Column>
+				<Text text="Published on" />
+			</Column>
+			<Column>
+				<Text text="Language" />
+			</Column>
+			<Column>
+				<Text text="Number of books" />
+			</Column>
+			<Column>
+				<Text text="Available books" />
+			</Column>
+			<Column>
+				<Text text="Created on" />
+			</Column>
+			<Column>
+				<Text text="Created by" />
+			</Column>
+			<Column>
+				<Text text="Changed on" />
+			</Column>
+			<Column>
+				<Text text="Changed by" />
+			</Column>
+		</columns>
+		<items>
+			<ColumnListItem>
+				<cells>
+					<Text text="{BooksId}" />
+					<Text text="{Title}" />
+					<Text text="{Author}" />
+					<Text text="{
+						path: 'DatePublished',
+						formatter: '.formatter.date'
+					}" />
+					<Text text="{Language}" />
+					<Text text="{= parseInt(${NrBooks}) }" />
+					<Text text="{= parseInt(${NrAvailable}) }" />
+					<Text text="{
+						path: 'CreatedOn',
+						formatter: '.formatter.date'
+					}" />
+					<Text text="{CreatedBy}" />
+					<Text text="{
+						path: 'ChangedOn',
+						formatter: '.formatter.date'
+					}" />
+					<Text text="{ChangedBy}" />
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+
+</mvc:View>
